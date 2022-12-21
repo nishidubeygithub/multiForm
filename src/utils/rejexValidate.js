@@ -5,3 +5,12 @@ export const EmailValid = () => {
 export const PhoneValid = () => {
     return (/^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$/);
 };
+
+export const NameValid = () => {
+    return (/^[a-zA-Z ]+$/);
+  };
+
+  
+export const LastNameValid = () => {
+    return (/[a-zA-Z][a-zA-Z ]*/);
+};

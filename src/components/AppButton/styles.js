@@ -3,22 +3,21 @@ import color from '../../constant/color';
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    borderWidth: 1,
-    margin: 20,
-    padding: 10,
-    height: 70,
-    width: 380,
-    fontSize: 80,
-    fontWeight: 'bold',
+   borderWidth: 1,
+    margin:10,
+    padding: 6,
+    height: 55,
+    width: 280,
     borderRadius: 30,
-    backgroundColor: color.pink,
+    backgroundColor: color.primary,
     alignItems: 'center',
     borderColor: color.white,
   },
   textStyle: {
-    fontSize: 20,
-    padding: 10,
-    fontWeight: 'bold',
+    fontSize: 15,
+    padding: 12,
+    textAlign: 'center',
+    fontWeight: '400',
     color: color.white,
   },
 });

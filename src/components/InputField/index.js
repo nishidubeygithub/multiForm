@@ -1,26 +1,27 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 import color from '../../constant/color.js';
 import styles from './styles.js';
 
 const InputField = props => {
-  const {placeholder, style, value, onBlur, onChangeText, autoCapitalize} =
-    props;
+  const { error, placeholder } = props;
   return (
-    <>
-      <View style={styles.inputText}>
-        <TextInput
-          style={style}
-          placeholder={placeholder}
-          autoCapitalize={autoCapitalize}
-          onChangeText={onChangeText}
-          onBlur={onBlur}
-          value={value}
-        />
-      </View>
-    </>
-  );
-};
+    <View>
+     <TextInput {...props}
+        style={styles.textInput}
+          mode="outlined"
+          label={placeholder}
+          outlineColor="lightgrey" 
+          selectionColor='blue'
+          
+          //activeUnderlineColor='red'
+          theme={{ colors: { underlineColor:'blue'}}}/>
+      
+      <Text style={styles.errorText}>{error}</Text>
+    </View>
+  )
+}
 
 export default InputField;

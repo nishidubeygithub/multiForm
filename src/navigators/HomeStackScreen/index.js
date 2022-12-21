@@ -1,20 +1,20 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import MainScreen from '../../screens/MainScreen';
-import StackScreen from '../../screens/StackScreen';
-import LoginScreen from '../../screens/userDetails/LoginScreen';
-import UserInfoScreen from '../../screens/userDetails/UserInfoScreen';
-import CompanyDetailsScreen from '../../screens/userDetails/CompanyDetailsScreen'
+import WelcomeScreen from '../../screens/WelcomeScreen';
+import DepartmentScreen from '../../screens/DepartmentScreen';
+import UserDetailsScreen from '../../screens/userContactDetails/UserDetailsScreen';
+import UserNameScreen from '../../screens/userContactDetails/UserNameScreen';
+import ThankYouScreen from '../../screens/userContactDetails/ThankYouScreen'
 
 const Stack = createNativeStackNavigator();
 
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="MainScreen" component={MainScreen} />
-      <Stack.Screen name="StackScreen" component={StackScreen} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="UserInfoScreen" component={UserInfoScreen} />
-      <Stack.Screen name="CompanyDetailsScreen" component={CompanyDetailsScreen} />
+      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+      <Stack.Screen name="DepartmentScreen" component={DepartmentScreen} />
+      <Stack.Screen name="UserDetailsScreen" component={UserDetailsScreen} />
+      <Stack.Screen name="UserNameScreen" component={UserNameScreen} />
+      <Stack.Screen name="ThankYouScreen" component={ThankYouScreen} />
     </Stack.Navigator>
   );
 };
