@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,20 +8,20 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import InputField from '../../../components/InputField';
-import { EmailValid, PhoneValid } from '../../../utils/rejexValidate';
+import {EmailValid, PhoneValid} from '../../../utils/rejexValidate';
 import styles from './styles';
-import { userInfoData } from '../../../redux/action/Action';
+import {userInfoData} from '../../../redux/action/Action';
 import AppButton from '../../../components/AppButton';
 import HeaderImages from '../../../components/HeaderImages';
 import Heading from '../../../components/Heading';
 import string from '../../../string/index';
-import HeaderBar from '../../../components/HeaderBar'
-import { incProgressBar } from '../../../redux/action/Action';
+import HeaderBar from '../../../components/HeaderBar';
+import {incProgressBar} from '../../../redux/action/Action';
 
-const UserDetailsScreen = ({ navigation }) => {
+const UserDetailsScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [emailValid, setEmailValid] = useState(true);
@@ -56,10 +56,7 @@ const UserDetailsScreen = ({ navigation }) => {
       <HeaderImages />
       <HeaderBar />
       <View style={styles.container}>
-      <Text>
-      'What is the email and phone number that we can reach you the best?',
-      </Text>
-        {/* <Heading text={string.user} /> */}
+        <Heading text={string.user} />
         <InputField
           placeholder="Email Address"
           value={email}
@@ -76,9 +73,7 @@ const UserDetailsScreen = ({ navigation }) => {
           onChangeText={val => setPhone(val)}
           error={phoneValid}
         />
-        <AppButton
-          buttonText="NEXT"
-          onPress={buttonValidator} />
+        <AppButton buttonText="NEXT" onPress={buttonValidator} />
       </View>
     </SafeAreaView>
   );

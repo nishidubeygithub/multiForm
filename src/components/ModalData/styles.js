@@ -1,11 +1,11 @@
-import {StyleSheet} from "react-native";
-import Fonts from '../Fonts/index'
+import {StyleSheet} from 'react-native';
+import Fonts from '../Fonts/index';
 
 const styles = StyleSheet.create({
-    textInput: {
-        fontSize:Fonts.fontSize_11,
-        margin:5
-      },
-})
+  textInput: {
+    fontSize: Fonts.fontSize_11,
+    margin: 5,
+  },
+});
 
-export default styles
+export default styles;

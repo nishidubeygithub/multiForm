@@ -6,12 +6,12 @@ import styles from './styles';
 
 const HeaderBar = () => {
   const progress = useSelector(state => state.userData.progress);
-
+  //console.log('Progressbar------>', progress);
   return (
     <ProgressBar
+      style={styles.progressStyle}
       progress={progress}
       color={color.lightgrey}
-      style={styles.progressStyle}
     />
   );
 };

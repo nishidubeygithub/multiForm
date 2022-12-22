@@ -3,7 +3,7 @@ import WelcomeScreen from '../../screens/WelcomeScreen';
 import DepartmentScreen from '../../screens/DepartmentScreen';
 import UserDetailsScreen from '../../screens/UserContactDetails/UserDetailsScreen';
 import UserNameScreen from '../../screens/UserContactDetails/UserNameScreen';
-import ThankYouScreen from '../../screens/UserContactDetails/ThankYouScreen'
+import ThankYouScreen from '../../screens/UserContactDetails/ThankYouScreen';
 
 const Stack = createNativeStackNavigator();
 

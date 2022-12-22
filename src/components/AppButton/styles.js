@@ -3,8 +3,8 @@ import color from '../../constant/color';
 
 const styles = StyleSheet.create({
   buttonStyle: {
-   borderWidth: 1,
-    margin:10,
+    borderWidth: 1,
+    margin: 10,
     padding: 6,
     height: 55,
     width: 280,

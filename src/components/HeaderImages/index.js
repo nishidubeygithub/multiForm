@@ -5,17 +5,16 @@ import styles from './styles';
 import image from '../../config/Image';
 
 const HeaderImages = () => {
-    const {goBack} = useNavigation();
+  const {goBack} = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => goBack()}> 
+        <TouchableOpacity onPress={() => goBack()}>
           <Image style={styles.leftStyle} source={image.leftarrow} />
         </TouchableOpacity>
 
         <Image style={styles.cancelStyle} source={image.cancel} />
       </View>
-      <View style={styles.line}></View>
     </SafeAreaView>
   );
 };
