@@ -6,14 +6,6 @@ const styles = StyleSheet.create({
     marginTop: 40,
     alignItems: 'center',
   },
-  headerText: {
-    fontSize: 24,
-    fontWeight: '500',
-    marginLeft: 20,
-  },
-  mainHeader: {
-    marginTop: 20,
-  }
 });
 
 export default styles;

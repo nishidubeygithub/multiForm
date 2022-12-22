@@ -1,8 +1,9 @@
-import {StyleSheet} from "react-native"
+import {StyleSheet} from "react-native";
+import Fonts from '../Fonts/index'
 
 const styles = StyleSheet.create({
     textInput: {
-        fontSize:15,
+        fontSize:Fonts.fontSize_11,
         margin:5
       },
 })

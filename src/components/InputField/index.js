@@ -10,7 +10,7 @@ const InputField = props => {
   return (
     <View>
      <TextInput {...props}
-        style={styles.textInput}
+        style={styles.inputText}
           mode="outlined"
           label={placeholder}
           outlineColor="lightgrey" 

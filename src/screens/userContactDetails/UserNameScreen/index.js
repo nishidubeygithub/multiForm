@@ -14,10 +14,12 @@ import InputField from '../../../components/InputField';
 import { NameValid, LastNameValid } from '../../../utils/rejexValidate';
 import styles from './styles';
 import { userName } from '../../../redux/action/Action';
-import ButtonComponent from '../../../components/ButtonComponent';
+import AppButton from '../../../components/AppButton';
 import HeaderImages from '../../../components/HeaderImages';
 import Heading from '../../../components/Heading';
-import string from '../../../string/index'
+import string from '../../../string/index';
+import HeaderBar from '../../../components/HeaderBar'
+import { incProgressBar } from '../../../redux/action/Action';
 
 const UserNameScreen = ({ navigation }) => {
   const [firstname, setFirstName] = useState('');
@@ -40,6 +42,7 @@ const UserNameScreen = ({ navigation }) => {
   };
   const buttonClick = () => {
     dispatch(userName(firstname, lastname));
+    dispatch(incProgressBar());
     if (firstname === '' && lastname === '') {
       alert('Empty name');
     } else {
@@ -49,8 +52,12 @@ const UserNameScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <HeaderImages />
+      <HeaderBar />
       <View style={styles.container}>
-        <Heading text={string.name} />
+      <Text>
+      'Could you tell us a bit more about yourself?'
+      </Text>
+        {/* <Heading text={string.name} /> */}
         <InputField
           placeholder="First Name"
           value={firstname}
@@ -67,7 +74,7 @@ const UserNameScreen = ({ navigation }) => {
           onChangeText={val => setLastName(val)}
           error={lastnameValid}
         />
-        <ButtonComponent
+        <AppButton
           buttonText="NEXT"
           onPress={buttonClick} />
 

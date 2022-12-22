@@ -14,40 +14,41 @@ import AppButton from '../../components/AppButton';
 import HeaderImages from '../../components/HeaderImages';
 import Heading from '../../components/Heading';
 import string from '../../string/index'
+import HeaderBar from '../../components/HeaderBar';
+import { incProgressBar } from '../../redux/action/Action';
 
 const DepartmentScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   return (
     <SafeAreaView>
       <HeaderImages />
+      <HeaderBar />
       <View style={styles.container}>
-        <Heading text={string.department} />
-        <View style={styles.mainHeader}>
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDepartment('Marketing'))
-              navigation.navigate('UserDetailsScreen');
-            }}>
-            <AppButton name="MARKETING" />
-          </TouchableOpacity>
+      <Text style={styles.headerTxt}>
+          Great! What department do you work in ?
+        </Text>
+        {/* <Heading text={string.department} /> */}
+        <AppButton buttonText="MARKETING" onPress={() => {
+          dispatch(userDepartment('Marketing')),
+            dispatch(incProgressBar());
+          navigation.navigate('UserDetailsScreen');
+        }} />
 
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDepartment('Sales'))
-              navigation.navigate('UserDetailsScreen');
-            }}>
-            <AppButton name="SALES" />
-          </TouchableOpacity>
+        <AppButton buttonText="SALES"
+          onPress={() => {
+            dispatch(userDepartment('Sales')),
+              dispatch(incProgressBar());
+            navigation.navigate('UserDetailsScreen');
+          }} />
 
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDepartment('Development'))
-              navigation.navigate('UserDetailsScreen');
-            }}>
-            <AppButton name="DEVELOPMENT" />
-          </TouchableOpacity>
-        </View>
+        <AppButton buttonText="DEVELOPMENT" onPress={() => {
+          dispatch(userDepartment('Development')),
+            dispatch(incProgressBar());
+          navigation.navigate('UserDetailsScreen');
+        }} />
+
       </View>
+
     </SafeAreaView>
   );
 };

@@ -14,38 +14,43 @@ import AppButton from '../../components/AppButton';
 import { userDevelopment } from '../../redux/action/Action';
 import HeaderImages from '../../components/HeaderImages';
 import string from '../../string/index';
-import Heading from '../../components/Heading'
+import Heading from '../../components/Heading';
+import HeaderBar from '../../components/HeaderBar'
+import { incProgressBar } from '../../redux/action/Action';
 
 const WelcomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   return (
     <SafeAreaView>
       <HeaderImages />
+      <HeaderBar/>
       <View style={styles.container}>
-        <Heading text={string.welcome} />
-        <View style={styles.mainHeader}>
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDevelopment('App Development'))
-              navigation.navigate('DepartmentScreen');
-            }}>
-            <AppButton name="APP DEVELOPMENT" />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDevelopment('Web Development'))
-              navigation.navigate('DepartmentScreen');
-            }}>
-            <AppButton name="WEB DEVELOPMENT" />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              dispatch(userDevelopment('Backend Development'))
-              navigation.navigate('DepartmentScreen');
-            }}>
-            <AppButton name="BACKEND DEVELOPMENT" />
-          </TouchableOpacity>
-        </View>
+        {/* <Heading text={string.welcome} /> */}
+        <Text>
+        'Welcome! What are you looking for ?'
+        </Text>
+        <AppButton buttonText="APP DEVELOPMENT" onPress={() => {
+          dispatch(userDevelopment('App Development')),
+            dispatch(incProgressBar());
+          navigation.navigate('DepartmentScreen');
+        }} />
+
+        <AppButton buttonText="WEB DEVELOPMENT"
+          onPress={() => {
+            dispatch(userDevelopment('Web Development')),
+              dispatch(incProgressBar());
+            navigation.navigate('DepartmentScreen');
+          }}
+        />
+
+        <AppButton buttonText="BACKEND DEVELOPMENT"
+          onPress={() => {
+            dispatch(userDevelopment('Backend Development')),
+              dispatch(incProgressBar());
+            navigation.navigate('DepartmentScreen');
+          }}
+        />
+
       </View>
     </SafeAreaView>
   );

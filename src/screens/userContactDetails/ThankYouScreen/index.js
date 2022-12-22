@@ -15,13 +15,15 @@ import InputField from '../../../components/InputField';
 import { userCompanyData } from '../../../redux/action/Action';
 import { NameValid, LastNameValid } from '../../../utils/rejexValidate';
 import styles from './styles';
-import ButtonComponent from '../../../components/ButtonComponent';
+import AppButton from '../../../components/AppButton';
 import HeaderImages from '../../../components/HeaderImages';
 import Heading from '../../../components/Heading';
 import string from '../../../string/index';
-import ModalData from '../../../components/ModalData'
+import ModalData from '../../../components/ModalData';
+import HeaderBar from '../../../components/HeaderBar'
+import { incProgressBar } from '../../../redux/action/Action';
 
-const CompanyDetailsScreen = ({ navigation }) => {
+const ThankYouScreen = ({ navigation }) => {
   const [companyname, setCompanyName] = useState('');
   const [jobtitle, setJobTitle] = useState('');
   const [companynameValid, setCompanyNameValid] = useState('');
@@ -56,8 +58,12 @@ const CompanyDetailsScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <HeaderImages />
+      <HeaderBar />
       <View style={styles.container}>
-        <Heading text={string.thanks} />
+      <Text>
+      'Thanks! Just a few more details and we are done!'
+      </Text>
+        {/* <Heading text={string.thanks} /> */}
         <InputField
           placeholder="Company Name"
           value={companyname}
@@ -74,10 +80,11 @@ const CompanyDetailsScreen = ({ navigation }) => {
           onChangeText={val => setJobTitle(val)}
           error={jobtitleValid}
         />
-        <ButtonComponent
+        <AppButton
           buttonText="REQUEST DEMO"
           onPress={() => {
-            dispatch(userCompanyData(companyname, jobtitle), buttonClick());
+            dispatch(userCompanyData(companyname, jobtitle),
+              dispatch(incProgressBar()), buttonClick());
           }} />
 
         <Modal
@@ -110,4 +117,4 @@ const CompanyDetailsScreen = ({ navigation }) => {
   );
 };
 
-export default CompanyDetailsScreen;
+export default ThankYouScreen;

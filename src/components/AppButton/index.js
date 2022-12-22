@@ -10,12 +10,13 @@ import {
 import color from '../../constant/color.js';
 import styles from './styles.js';
 
-const AppButton = props => {
-  const {name} = props;
+const AppButton = ({ buttonText, onPress }) => {
   return (
-    <View style={styles.buttonStyle}>
-      <Text style={styles.textStyle}>{name}</Text>
-    </View>
+      <TouchableOpacity
+          style={styles.buttonStyle}
+          onPress={onPress}>
+          <Text style={styles.textStyle}>{buttonText}</Text>
+      </TouchableOpacity>
   );
 };
 export default AppButton;

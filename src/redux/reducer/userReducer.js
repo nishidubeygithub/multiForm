@@ -4,6 +4,7 @@ const initialState = {
 
   userDevelopment: '',
   userDepartment: '',
+  progress: 0,
 
   userInfoData: {
     email: '',
@@ -17,6 +18,7 @@ const initialState = {
     companyName: '',
     jobTitle: '',
   },
+
 
 };
 
@@ -59,7 +61,9 @@ const userReducer = (state = initialState, action) => {
         userCompanyData: payload,
       };
 
-
+    case ActionType.INCREASE_PROGRESS_BAR:
+      console.log('user details----->', action.payload);
+      return { ...state, progress: state.progress + 0.4 };
 
     default:
       return state;

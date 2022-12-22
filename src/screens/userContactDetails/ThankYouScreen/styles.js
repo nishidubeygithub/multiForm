@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import color from '../../../constant/color';
+import Fonts from '../../../components/Fonts/index'
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   modaldata: {
-    fontSize: 12,
+    fontSize: Fonts.fontSize_15,
     paddingBottom: '10%',
   },
   buttonStyle: {

@@ -14,10 +14,12 @@ import InputField from '../../../components/InputField';
 import { EmailValid, PhoneValid } from '../../../utils/rejexValidate';
 import styles from './styles';
 import { userInfoData } from '../../../redux/action/Action';
-import ButtonComponent from '../../../components/ButtonComponent';
+import AppButton from '../../../components/AppButton';
 import HeaderImages from '../../../components/HeaderImages';
 import Heading from '../../../components/Heading';
-import string from '../../../string/index'
+import string from '../../../string/index';
+import HeaderBar from '../../../components/HeaderBar'
+import { incProgressBar } from '../../../redux/action/Action';
 
 const UserDetailsScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -41,6 +43,7 @@ const UserDetailsScreen = ({ navigation }) => {
 
   const buttonValidator = () => {
     dispatch(userInfoData(email, phone));
+    dispatch(incProgressBar());
     if (email === '' && phone === '') {
       alert('Empty email and password');
     } else {
@@ -51,8 +54,12 @@ const UserDetailsScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <HeaderImages />
+      <HeaderBar />
       <View style={styles.container}>
-        <Heading text={string.user} />
+      <Text>
+      'What is the email and phone number that we can reach you the best?',
+      </Text>
+        {/* <Heading text={string.user} /> */}
         <InputField
           placeholder="Email Address"
           value={email}
@@ -69,7 +76,7 @@ const UserDetailsScreen = ({ navigation }) => {
           onChangeText={val => setPhone(val)}
           error={phoneValid}
         />
-        <ButtonComponent
+        <AppButton
           buttonText="NEXT"
           onPress={buttonValidator} />
       </View>

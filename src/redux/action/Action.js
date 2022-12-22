@@ -27,3 +27,10 @@ export const userCompanyData = (companyName, jobTitle) => ({
   payload: { companyName, jobTitle },
 });
 
+export const incProgressBar = user => ({
+  type: ActionType.INCREASE_PROGRESS_BAR,
+  payload: user,
+});
+
+
+
